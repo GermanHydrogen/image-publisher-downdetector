@@ -6,7 +6,7 @@ class State(Enum):
     OFFLINE = 0
 
 
-class SwitchState(object):
+class StateSwitch(object):
     def __init__(self, initial_state: State = State.OFFLINE):
         self._state = initial_state
 

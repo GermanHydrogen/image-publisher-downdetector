@@ -16,12 +16,9 @@ class ImageCacheComparer(object):
         if self._last_image is None:
             return False
 
-        diff = self._last_image.difference(image)
+        is_different = any(map(lambda x: x[0] != x[1], zip(self._last_image.getdata(), image.getdata())))
 
-        if diff.getbbox():
-            return True
-
-        return False
+        return is_different
 
     def _save(self, image: Image) -> None:
         self._last_image = image
