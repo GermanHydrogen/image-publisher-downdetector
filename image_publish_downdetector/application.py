@@ -12,10 +12,16 @@ class Application(object):
         self._sleep_time = sleep_time
 
     async def start(self):
-        self._notifier.send_notification("Started Down Detector")
+        self._notifier.send_notification("Started DownDetector.")
+        await self._loop()
+
+    async def _loop(self):
         while True:
-            self._iterate()
-            await asyncio.sleep(self._sleep_time)
+            await self._looping()
+
+    async def _looping(self):
+        self._iterate()
+        await asyncio.sleep(self._sleep_time)
 
     def _iterate(self):
         try:
