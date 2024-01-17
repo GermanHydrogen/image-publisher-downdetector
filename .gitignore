@@ -9,3 +9,4 @@ pyobs_allsky.egg-info/
 data/
 .ipynb_checkpoints/
 *.ipynb
+.env
