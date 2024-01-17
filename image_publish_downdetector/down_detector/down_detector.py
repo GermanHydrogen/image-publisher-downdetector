@@ -1,8 +1,8 @@
 from typing import Optional
 
-from image_publish_downdetector.image_cache_comparer import ImageCacheComparer
-from image_publish_downdetector.image_fetcher import ImageFetcher
-from image_publish_downdetector.state_switch import StateSwitch, State
+from image_publish_downdetector.down_detector.image_cache_comparer import ImageCacheComparer
+from image_publish_downdetector.down_detector.image_fetcher import ImageFetcher
+from image_publish_downdetector.down_detector.state_switch import StateSwitch, State
 
 
 class DownDetector(object):

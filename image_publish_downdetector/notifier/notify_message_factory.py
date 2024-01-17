@@ -1,4 +1,4 @@
-from image_publish_downdetector.state_switch import State
+from image_publish_downdetector.down_detector.state_switch import State
 
 
 class NotifyMessageFactory:

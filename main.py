@@ -4,11 +4,11 @@ import yaml
 
 from image_publish_downdetector.application import Application
 from image_publish_downdetector.down_detector import DownDetector
-from image_publish_downdetector.image_cache_comparer import ImageCacheComparer
-from image_publish_downdetector.image_fetcher import ImageFetcher
+from image_publish_downdetector.down_detector.image_cache_comparer import ImageCacheComparer
+from image_publish_downdetector.down_detector.image_fetcher import ImageFetcher
 from image_publish_downdetector.notifier import Notifier
-from image_publish_downdetector.notify_message_factory import NotifyMessageFactory
-from image_publish_downdetector.state_switch import StateSwitch
+from image_publish_downdetector.notifier.notify_message_factory import NotifyMessageFactory
+from image_publish_downdetector.down_detector.state_switch import StateSwitch
 
 
 def load_config(config_file_path: str):
