@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "image-publish-downdetector"
+version = "0.1.0"
+description = ""
+authors = ["germanhydrogen <admin@germanhydrogen.org>"]
+readme = "README.md"
+packages = [{include = "image_publish_downdetector"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.31.0"
+pillow = "^10.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

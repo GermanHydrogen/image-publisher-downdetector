@@ -1,0 +1,11 @@
+venv/
+.idea/
+build/
+pyobs_allsky.egg-info/
+*.yaml
+*.npy
+.coverage
+**/__pycache__/
+data/
+.ipynb_checkpoints/
+*.ipynb
