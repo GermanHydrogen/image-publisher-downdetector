@@ -12,6 +12,7 @@ class Application(object):
         self._sleep_time = sleep_time
 
     async def start(self):
+        self._notifier.send_notification("Started Down Detector")
         while True:
             self._iterate()
             await asyncio.sleep(self._sleep_time)

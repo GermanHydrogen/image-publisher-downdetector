@@ -28,12 +28,12 @@ ENV PATH="${PATH}:${POETRY_VENV}/bin"
 
 WORKDIR /usr/app/src
 
-COPY poetry.lock pyproject.toml ./
+COPY poetry.lock pyproject.toml main.py ./
 
 # [OPTIONAL] Validate the project is properly configured
 #RUN poetry check
 
-COPY Readme.md Readme.md
+COPY README.md README.md
 
 # Install Dependencies
 RUN poetry install --no-interaction --no-cache --without dev --no-root
@@ -42,4 +42,4 @@ ADD image_publish_downdetector/ image_publish_downdetector/
 
 RUN poetry install --no-interaction --no-cache --only-root
 
-CMD ["/bin/sh", "-c", "poetry run main.py"]
+CMD ["/bin/sh", "-c", "poetry run python main.py"]
