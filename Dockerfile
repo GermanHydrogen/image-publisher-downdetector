@@ -1,4 +1,4 @@
-FROM python:3.11.0 as python-base
+FROM python:slim as python-base
 
 # https://python-poetry.org/docs#ci-recommendations
 ENV POETRY_VERSION=1.4.2
