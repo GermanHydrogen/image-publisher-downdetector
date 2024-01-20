@@ -1,3 +1,5 @@
+import asyncio
+
 from PIL import Image
 import requests
 from io import BytesIO
@@ -5,11 +7,12 @@ from io import BytesIO
 
 class ImageFetcher:
     MAX_FAILURES = 3
+    WAIT_AFTER_FAILURE = 10
 
     def __init__(self, url: str):
         self._url = url
 
-    def __call__(self) -> Image:
+    async def __call__(self) -> Image:
         failures = 0
         exception: Exception
         while failures < self.MAX_FAILURES:
@@ -17,6 +20,7 @@ class ImageFetcher:
                 return self._fetch()
             except Exception as exception:
                 failures += 1
+                await asyncio.sleep(self.WAIT_AFTER_FAILURE)
 
         raise exception
 

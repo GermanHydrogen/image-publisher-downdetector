@@ -15,8 +15,8 @@ class DownDetector(object):
         self._image_cache = image_cache
         self._state_switch = state_switch
 
-    def __call__(self) -> Optional[State]:
-        new_image = self._image_fetcher()
+    async def __call__(self) -> Optional[State]:
+        new_image = await self._image_fetcher()
         has_changed = self._image_cache(new_image)
         state = State(int(has_changed))
         need_to_notify = self._state_switch.update(state)

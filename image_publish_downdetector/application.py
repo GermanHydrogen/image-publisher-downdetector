@@ -20,12 +20,12 @@ class Application(object):
             await self._looping()
 
     async def _looping(self):
-        self._iterate()
+        await self._iterate()
         await asyncio.sleep(self._sleep_time)
 
-    def _iterate(self):
+    async def _iterate(self):
         try:
-            state = self._down_detector()
+            state = await self._down_detector()
         except Exception as e:
             self._notifier.send_notification(f"DownDetector error: {e}")
             return
